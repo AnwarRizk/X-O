@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 20px 0; /* Added margin to the top and bottom */
+    overflow: hidden;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 90vmin; /* Adjusted size to allow for the margin */
+    height: 90vmin; /* Adjusted size to allow for the margin */
+    gap: 5px;
+    position: relative;
+}
+
+.cell {
+    position: relative;
+    background-color: white;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cell-number {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 24px;
+    color: #888888b9;
+}
+
+.btn-x, .btn-o {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    display: block;
+}
+
+.btn-x {
+    background-color: #ff696156;
+    color: white;
+    left: 10px;
+}
+
+.btn-o {
+    background-color: #77dd774e;
+    color: white;
+    right: 10px;
+}
+
+.cell.x::before {
+    content: "X";
+    color: #ff6961;
+    font-size: 120px;
+}
+
+.cell.o::before {
+    content: "O";
+    color: #77dd77;
+    font-size: 120px;
+}
+
+.restart-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.congratulations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+    z-index: 1000;
+}
+
+.congratulations.hidden {
+    display: none;
+}
+
+.congratulations.x {
+    color: #ff6961;
+}
+
+.congratulations.o {
+    color: #77dd77;
+}
+
+.congratulations.draw {
+    color: white;
+}
